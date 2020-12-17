@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:star_wars_game/pages/home_page.dart';
+import 'UI/screen/home_screen.dart';
 
 void main() {
   runApp(StarWarsRandom());
@@ -12,11 +12,11 @@ class StarWarsRandom extends StatelessWidget {
     return MaterialApp(
       title: 'Star Wars Game',
       theme: ThemeData(
-        primarySwatch: Colors.lime,
+        primarySwatch: Colors.blueGrey,
         backgroundColor: Colors.white,
         textTheme: GoogleFonts.aBeeZeeTextTheme(
           Theme.of(context).textTheme,
-        )
+        ),
       ),
       home: HomePage(),
     );
