@@ -5,15 +5,24 @@ import 'package:star_wars_game/models/starships.dart';
 
 class StarWarsApi {
   final _dio = Dio();
+  People people;
+  StarShips ships;
   String type;
   num id;
 
-  StarWarsApi(this.type) :
+  StarWarsApi();
+
+  StarWarsApi.getCardByType(this.type) :
         id = _getRandom(type);
 
   static int _getRandom(String type) {
-    List<int> _trueId = [ 2, 3, 5, 9, 10, 11, 12, 13, 15, 17, 21, 22, 23, 27, 28, 29, 31, 32];
-    return type == 'people' ? Random().nextInt(82) : _trueId[Random().nextInt(17)];
+    List<int> _validStarShipsId = [ 2, 3, 5, 9, 10, 11, 12, 13, 15, 17, 21, 22, 23, 27, 28, 29, 31, 32];
+    int _randomPeopleId = Random().nextInt(82);
+    int _randomStarShipsId = Random().nextInt(17);
+    return type == 'people' ?
+        (_randomPeopleId == 0 || _randomPeopleId == 17 ?
+        _randomPeopleId + 1 : _randomPeopleId) :
+        _validStarShipsId[_randomStarShipsId];
   }
 
   Future get getData async {
@@ -23,11 +32,10 @@ class StarWarsApi {
         print(_url);
         Response response = await _dio.get(_url.toString());
         People result = People.parseJson(response.data);
-        return result;
+        people = result;
+        return people;
       } on Exception catch (e) {
         print(e);
-      } finally {
-
       }
     } else if (type == 'starships') {
       try {
@@ -35,23 +43,14 @@ class StarWarsApi {
         print(_url);
         Response response = await _dio.get(_url.toString());
         StarShips result = StarShips.parseJson(response.data);
-        return result;
+        ships = result;
+        return ships;
       } on Exception catch (err) {
         print(err.toString());
       }
     }
     return null;
   }
-
-  // Future<People> get getPeopleDate async {
-  //
-  //   return null;
-  // }
-
-  // Future<StarShips> get getStarShipsDate async {
-  //
-  //   return null;
-  // }
 
   Uri _getURl(String type, num id) {
     String _apiBaseUri = 'swapi.dev';

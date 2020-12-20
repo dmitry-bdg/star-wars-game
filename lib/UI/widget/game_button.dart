@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:star_wars_game/models/star_wars_game.dart';
 
 class GameButton extends StatelessWidget {
   final String type;
@@ -14,8 +16,8 @@ class GameButton extends StatelessWidget {
       ),
       color: Colors.black.withOpacity(.7),
       onPressed: () {
+        context.read<StarWarsGame>().setGameType(type);
         Navigator.pushNamed(context, '/game');
-        // FIX Game Type!!!
       },
       child: Text(
         type,
