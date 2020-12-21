@@ -14,7 +14,7 @@ class GameButton extends StatelessWidget {
         horizontal: 80,
         vertical: 25,
       ),
-      color: Colors.black.withOpacity(.7),
+      color: Colors.black.withOpacity(.6),
       onPressed: () {
         context.read<StarWarsGame>().setGameType(type);
         Navigator.pushNamed(context, '/game');

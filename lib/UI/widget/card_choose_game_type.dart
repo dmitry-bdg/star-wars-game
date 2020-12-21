@@ -4,8 +4,8 @@ import 'game_button.dart';
 
 class CardGameType extends StatelessWidget {
   final String type;
-  final String _peopleImage = 'lib/assets/img/starWarsSaga.png';
-  final String _starShipImage = 'lib/assets/img/shipsBg.png';
+  final String _peopleImage = 'lib/assets/img/starWarsSaga.jpg';
+  final String _starShipImage = 'lib/assets/img/shipsBg.jpg';
 
   CardGameType({@required this.type});
 

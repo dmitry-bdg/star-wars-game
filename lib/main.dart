@@ -25,7 +25,7 @@ class StarWarsRandom extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
           backgroundColor: Colors.white,
-          textTheme: GoogleFonts.aBeeZeeTextTheme(
+          textTheme: GoogleFonts.robotoSlabTextTheme(
             Theme.of(context).textTheme,
           ),
         ),

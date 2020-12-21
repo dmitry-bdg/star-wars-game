@@ -5,8 +5,8 @@ import 'package:star_wars_game/models/starships.dart';
 
 class StarWarsApi {
   final _dio = Dio();
-  People people;
-  StarShips ships;
+  // People people;
+  // StarShips ships;
   String type;
   num id;
 
@@ -25,30 +25,30 @@ class StarWarsApi {
         _validStarShipsId[_randomStarShipsId];
   }
 
-  Future get getData async {
-    if (type == 'people') {
-      try {
-        Uri _url = _getURl(type, id);
-        print(_url);
-        Response response = await _dio.get(_url.toString());
-        People result = People.parseJson(response.data);
-        people = result;
-        return people;
-      } on Exception catch (e) {
-        print(e);
-      }
-    } else if (type == 'starships') {
+
+  Future<People> getPeopleData(String type) async {
+    try {
+      Uri _url = _getURl(type, id);
+      print(_url);
+      Response response = await _dio.get(_url.toString());
+      People result = People.parseJson(response.data);
+      return result;
+    } on Exception catch (e) {
+      print(e);
+    }
+    return null;
+  }
+
+  Future<StarShips> getStarShipsData(String type) async {
       try {
         Uri _url = _getURl(type, id);
         print(_url);
         Response response = await _dio.get(_url.toString());
         StarShips result = StarShips.parseJson(response.data);
-        ships = result;
-        return ships;
+        return result;
       } on Exception catch (err) {
         print(err.toString());
       }
-    }
     return null;
   }
 
