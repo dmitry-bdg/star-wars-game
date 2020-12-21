@@ -12,7 +12,6 @@ class StarShipsCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final watchState = context.watch<StarWarsGame>();
-    print(player);
     final resData = player == 'player1'
         ? watchState.getDataPlayer1
         : watchState.getDataPlayer2;

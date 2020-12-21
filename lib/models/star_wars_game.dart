@@ -22,7 +22,6 @@ class StarWarsGame with ChangeNotifier {
         };
 
   Map<String, dynamic> get getGameState {
-    print(_gameState);
     return _gameState;
   }
 
@@ -32,24 +31,20 @@ class StarWarsGame with ChangeNotifier {
 
   get getDataPlayer1 {
     if (_gameType == 'people') {
-      print(_peoplePlayer1.runtimeType);
       return _peoplePlayer1;
     }
 
     if (_gameType == 'starships') {
-      print(_shipsPlayer1.toString());
       return _shipsPlayer1;
     }
   }
 
   get getDataPlayer2 {
     if (_gameType == 'people') {
-      print(_peoplePlayer2.toString());
       return _peoplePlayer2;
     }
 
     if (_gameType == 'starships') {
-      print(_shipsPlayer2.toString());
       return _shipsPlayer2;
     }
   }

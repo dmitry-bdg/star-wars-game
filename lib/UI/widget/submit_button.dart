@@ -35,7 +35,6 @@ class ResultWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final watchState = context.watch<StarWarsGame>();
     final type = watchState.getGameType;
-    print(type);
 
     return AlertDialog(
       title: Text('Winner is:'),

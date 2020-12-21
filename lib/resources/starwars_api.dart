@@ -29,7 +29,6 @@ class StarWarsApi {
   Future<People> getPeopleData(String type) async {
     try {
       Uri _url = _getURl(type, id);
-      print(_url);
       Response response = await _dio.get(_url.toString());
       People result = People.parseJson(response.data);
       return result;
@@ -42,7 +41,6 @@ class StarWarsApi {
   Future<StarShips> getStarShipsData(String type) async {
       try {
         Uri _url = _getURl(type, id);
-        print(_url);
         Response response = await _dio.get(_url.toString());
         StarShips result = StarShips.parseJson(response.data);
         return result;

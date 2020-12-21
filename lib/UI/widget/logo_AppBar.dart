@@ -9,10 +9,10 @@ class LogoAppBar extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [
-        FloatingActionButton(onPressed: () {},
-        child: Icon(Icons.assessment_outlined),
-            backgroundColor: Colors.black54,
-        ),
+        // FloatingActionButton(onPressed: () {},
+        // child: Icon(Icons.assessment_outlined),
+        //     backgroundColor: Colors.black54,
+        // ),
         Container(
           margin: const EdgeInsets.only(left: 60),
           child: Text(
