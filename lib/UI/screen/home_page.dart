@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:star_wars_game/UI/widget/button_game_type.dart';
-import 'package:star_wars_game/UI/widget/logo_AppBar.dart';
+import 'package:star_wars_game/UI/widget/logo_app_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override

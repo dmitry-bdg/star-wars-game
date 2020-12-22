@@ -38,16 +38,13 @@ class ResultWidget extends StatelessWidget {
     return AlertDialog(
       title: Text('Winner is:'),
       content: Text(
-          '${type == 'people' ? watchState.getPeopleWinner().toString() :
-          watchState.getStarShipsWinner().toString()}. Congrats!'),
+          '${type == 'people' ? watchState.getPeopleWinner() :
+          watchState.getStarShipsWinner()}.'),
       actions: [
         FlatButton(
           onPressed: () {
             Navigator.pushNamed(context, '/');
-            Future.delayed(Duration(milliseconds: 800), () {{
-              context.read<StarWarsGame>().clearGameState();
-            }});
-            // context.read<StarWarsGame>().clearGameState();
+            context.read<StarWarsGame>().clearGameState();
           },
           child: Text('Cancel'),
         ),

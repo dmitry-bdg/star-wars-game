@@ -51,20 +51,20 @@ class StarShipsCardInfo extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              'Hyperdrive rating: ${resData.hyperdriveRating}',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.amber,
-                shadows: [
-                  Shadow(
-                    blurRadius: 2.0,
-                    color: Colors.black,
-                    offset: Offset(.8, -.2),
-                  ),
-                ],
-              ),
-            ),
+            // Text(
+            //   'Hyperdrive rating: ${resData.hyperdriveRating}',
+            //   style: TextStyle(
+            //     fontSize: 20,
+            //     color: Colors.amber,
+            //     shadows: [
+            //       Shadow(
+            //         blurRadius: 2.0,
+            //         color: Colors.black,
+            //         offset: Offset(.8, -.2),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

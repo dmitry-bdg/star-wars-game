@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:star_wars_game/UI/widget/go_back_button.dart';
-import 'package:star_wars_game/UI/widget/logo_AppBar.dart';
+import 'package:star_wars_game/UI/widget/logo_app_bar.dart';
 import 'package:star_wars_game/UI/widget/people_cards.dart';
 import 'package:star_wars_game/UI/widget/starship_cards.dart';
 import 'package:star_wars_game/UI/widget/submit_button.dart';

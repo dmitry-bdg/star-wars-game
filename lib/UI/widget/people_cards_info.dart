@@ -50,20 +50,20 @@ class PeopleCardInfo extends StatelessWidget {
               ],
             ),
           ),
-          Text(
-            'Was Born in: ${resData.birthYear}',
-            style: TextStyle(
-                fontSize: 20,
-              color: Colors.amber,
-              shadows: [
-                Shadow(
-                  blurRadius: 2.0,
-                  color: Colors.black,
-                  offset: Offset(.8, -.2),
-                ),
-              ],
-            ),
-          ),
+          // Text(
+          //   'Was Born in: ${resData.birthYear}',
+          //   style: TextStyle(
+          //       fontSize: 20,
+          //     color: Colors.amber,
+          //     shadows: [
+          //       Shadow(
+          //         blurRadius: 2.0,
+          //         color: Colors.black,
+          //         offset: Offset(.8, -.2),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );

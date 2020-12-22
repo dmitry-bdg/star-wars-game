@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:star_wars_game/models/star_wars_game.dart';
@@ -20,7 +18,7 @@ class PeopleCardButton extends StatelessWidget {
           horizontal: 50,
           vertical: 10,
         ),
-        color: Colors.black.withOpacity(.3),
+        color: Colors.black.withOpacity(.7),
         onPressed: () {
           final readState = context.read<StarWarsGame>();
 
@@ -33,16 +31,6 @@ class PeopleCardButton extends StatelessWidget {
             readState.getGameState['isGameStart'] = true;
             readState.getGameState['isSecondPlayerGet'] = true;
           }
-
-          if (readState.getGameState['isFirstPlayerGet'] &&
-              readState.getGameState['isSecondPlayerGet']) {
-            readState.getGameState['isGameEnd'] = true;
-
-          }
-
-          // if (readState.getGameState['isGameEnd']) {
-          //
-          // }
         },
         child: Text(
           'Get',

@@ -1,5 +1,3 @@
-import 'package:star_wars_game/resources/starwars_api.dart';
-
 class People {
   String name, hairColor, eyeColor, birthYear, height, mass;
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:star_wars_game/UI/widget/logo_AppBar.dart';
+import 'package:star_wars_game/UI/widget/go_back_button.dart';
+import 'package:star_wars_game/UI/widget/logo_app_bar.dart';
+import 'package:star_wars_game/UI/widget/statistic_view.dart';
 
 class StatisticPage extends StatelessWidget {
   @override
@@ -15,12 +17,16 @@ class StatisticPage extends StatelessWidget {
             'Statistic',
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Text(
-          'Statistic Page',
-          style: TextStyle(fontSize: 50),
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 10,
+            child: ViewStatistic(),
+          ),
+          Expanded(
+              flex: 1,
+              child: GoBackButton()),
+        ],
       ),
     );
   }
