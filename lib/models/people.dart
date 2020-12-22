@@ -7,12 +7,12 @@ class People {
 
   People.parseJson(Map<String, dynamic> json)
       :
-        name = json['name'],
-        hairColor = json['hair_color'],
-        eyeColor = json['eye_color'],
-        birthYear = json['birth_year'],
-        height = json['height'],
-        mass = json['mass'];
+        name = json['name'] ?? null,
+        hairColor = json['hair_color'] ?? null,
+        eyeColor = json['eye_color'] ?? null,
+        birthYear = json['birth_year'] ?? null,
+        height = json['height'] ?? null,
+        mass = json['mass'] ?? null;
 
   @override
   String toString() {

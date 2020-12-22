@@ -102,7 +102,8 @@ class StarWarsGame with ChangeNotifier {
     if (num.parse(_peoplePlayer1.mass) > num.parse(_peoplePlayer2.mass)) {
       return 'Player 1 Win!';
     }
-
+    print(_shipsPlayer1.toString());
+    print(_shipsPlayer2.toString());
     notifyListeners();
     return 'Player 2 Win!';
   }
@@ -120,6 +121,4 @@ class StarWarsGame with ChangeNotifier {
     statistic.map((el) => {});
     return '';
   }
-
-
 }
