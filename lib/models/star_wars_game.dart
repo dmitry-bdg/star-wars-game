@@ -4,13 +4,13 @@ import 'package:star_wars_game/models/starships.dart';
 import 'package:star_wars_game/resources/starwars_api.dart';
 
 class StarWarsGame with ChangeNotifier {
+  final List<String> _statistic = [];
+  final Map<String, dynamic> _gameState;
   People _peoplePlayer1 = People();
   People _peoplePlayer2 = People();
   StarShips _shipsPlayer1 = StarShips();
   StarShips _shipsPlayer2 = StarShips();
-  List<String> statistic = [];
   String _gameType;
-  Map<String, dynamic> _gameState;
 
   StarWarsGame()
       : _gameState = {
@@ -57,15 +57,13 @@ class StarWarsGame with ChangeNotifier {
   void setGameType(String type) {
     this._gameType = type;
     _gameState['gameType'] = this._gameType;
-    notifyListeners();
   }
 
   void clearGameState() {
     _gameType = '';
     _gameState.forEach((key, value) {
-      key == 'gameType' ? _gameState[key] : _gameState[key] = false;
+      _gameState[key] = false;
     });
-    notifyListeners();
   }
 
   void loadDataPlayer1() async {
@@ -98,27 +96,55 @@ class StarWarsGame with ChangeNotifier {
     notifyListeners();
   }
 
-  String getPeopleWinner() {
-    if (num.parse(_peoplePlayer1.mass) > num.parse(_peoplePlayer2.mass)) {
-      return 'Player 1 Win!';
+  num _getPreIntNumber(String string) {
+
+    if (string != null) {
+      num result = num.parse((string == 'unknown' ?
+      '0' : string).replaceAll(',', '.'));
+
+      if (result < 2.00) {
+        print(result);
+        return result * 1000;
+      }
+
+      return result;
     }
-    print(_shipsPlayer1.toString());
-    print(_shipsPlayer2.toString());
-    notifyListeners();
-    return 'Player 2 Win!';
+    return null;
+  }
+
+  String getPeopleWinner() {
+    num _massPl1 = _getPreIntNumber(_peoplePlayer1.mass);
+    num _massPl2 = _getPreIntNumber(_peoplePlayer2.mass);
+
+    if (_massPl1 > _massPl2) {
+      return 'Player 1 Winn! Congrats!';
+    }
+
+    if (_massPl1 == _massPl2) {
+      return 'Oops nobody won, the mass is equal.';
+    }
+
+    return 'Player 2 Win! Congrats!';
   }
 
   String getStarShipsWinner() {
-    if (num.parse(_shipsPlayer1.length) > num.parse(_shipsPlayer2.length)) {
-      return 'Player 1 Win!';
+    num _lengthPl1 = _getPreIntNumber(_shipsPlayer1.length);
+    num _lengthPl2 = _getPreIntNumber(_shipsPlayer2.length);
+
+    if (_lengthPl1 > _lengthPl2) {
+      return 'Player 1 Winn! Congrats!';
     }
-    notifyListeners();
-    return 'Player 2 Win!';
+
+    if (_lengthPl1 == _lengthPl2) {
+      return 'Oops nobody won, the length is equal.';
+    }
+
+    return 'Player 2 Win! Congrats!';
   }
 
   String getPlayersStatistic() {
-    int count = 0;
-    statistic.map((el) => {});
+    // int count = 0;
+    _statistic.map((el) => {});
     return '';
   }
 }
