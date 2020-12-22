@@ -4,7 +4,6 @@ import 'package:star_wars_game/models/starships.dart';
 import 'package:star_wars_game/resources/starwars_api.dart';
 
 class StarWarsGame with ChangeNotifier {
-  final List<String> _statistic = [];
   final Map<String, dynamic> _gameState;
   People _peoplePlayer1 = People();
   People _peoplePlayer2 = People();
@@ -142,9 +141,8 @@ class StarWarsGame with ChangeNotifier {
     return 'Player 2 Win! Congrats!';
   }
 
-  String getPlayersStatistic() {
+  getPlayersStatistic() {
     // int count = 0;
-    _statistic.map((el) => {});
     return '';
   }
 }

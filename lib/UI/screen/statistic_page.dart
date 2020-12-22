@@ -14,7 +14,7 @@ class StatisticPage extends StatelessWidget {
         title:
         LogoAppBar(
           titleData:
-            'Statistic',
+            'Game statistic',
         ),
       ),
       body: Column(
