@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:star_wars_game/UI/widget/logo_AppBar.dart';
 
 class StatisticPage extends StatelessWidget {
