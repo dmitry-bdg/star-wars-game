@@ -1,19 +1,16 @@
-import 'package:star_wars_game/resources/starwars_api_provider.dart';
-
 class People {
   String name, hairColor, eyeColor, birthYear, height, mass;
 
-  // People(this.name, this.hairColor, this.eyeColor, this.birthYear, this.height,
-  //     this.mass);
+  People();
 
   People.parseJson(Map<String, dynamic> json)
       :
-        name = json['name'],
-        hairColor = json['hair_color'],
-        eyeColor = json['eye_color'],
-        birthYear = json['birth_year'],
-        height = json['height'],
-        mass = json['mass'];
+        name = json['name'] ?? null,
+        hairColor = json['hair_color'] ?? null,
+        eyeColor = json['eye_color'] ?? null,
+        birthYear = json['birth_year'] ?? null,
+        height = json['height'] ?? null,
+        mass = json['mass'] ?? null;
 
   @override
   String toString() {

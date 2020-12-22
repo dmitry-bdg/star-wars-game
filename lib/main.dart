@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:star_wars_game/UI/screen/statistic_page.dart';
 import 'package:star_wars_game/models/star_wars_game.dart';
 import 'UI/screen/game_page.dart';
 import 'UI/screen/home_page.dart';
@@ -15,17 +16,18 @@ class StarWarsRandom extends StatelessWidget {
     return ChangeNotifierProvider<StarWarsGame>(
       create: (context) => StarWarsGame(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
           '/': (context) => HomePage(),
           '/game': (context) => GamePage(),
-          // '/statistic' : (context) => ,
+          '/statistic' : (context) => StatisticPage(),
         },
         title: 'Star Wars Game',
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
           backgroundColor: Colors.white,
-          textTheme: GoogleFonts.aBeeZeeTextTheme(
+          textTheme: GoogleFonts.robotoSlabTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
