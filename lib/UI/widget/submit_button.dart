@@ -16,7 +16,6 @@ class SubmitButton extends StatelessWidget {
         color: Colors.black.withOpacity(.7),
         onPressed: () =>
             showDialog(context: context, builder: (context) => ResultWidget()),
-
         child: Text(
           'check ${type == 'people' ? 'mass' : 'length'}',
           style: TextStyle(
@@ -39,12 +38,16 @@ class ResultWidget extends StatelessWidget {
     return AlertDialog(
       title: Text('Winner is:'),
       content: Text(
-          '${type == 'people' ? watchState.getPeopleWinner() : watchState.getStarShipsWinner()}. Congrats!'),
+          '${type == 'people' ? watchState.getPeopleWinner().toString() :
+          watchState.getStarShipsWinner().toString()}. Congrats!'),
       actions: [
         FlatButton(
           onPressed: () {
             Navigator.pushNamed(context, '/');
-            watchState.clearGameState();
+            Future.delayed(Duration(milliseconds: 800), () {{
+              context.read<StarWarsGame>().clearGameState();
+            }});
+            // context.read<StarWarsGame>().clearGameState();
           },
           child: Text('Cancel'),
         ),
